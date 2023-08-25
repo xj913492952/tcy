@@ -1,0 +1,44 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 黑色水平分割线风格 -->
+    <style name="divider_horizontal_transparent_black">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_width</item>
+        <item name="android:background">@color/divider_color</item>
+    </style>
+    <!-- 黑色竖直分割线风格 -->
+    <style name="divider_vertical_transparent_black">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">@dimen/divider_width</item>
+        <item name="android:background">@color/divider_color</item>
+    </style>
+    <!-- 白色竖直分割线风格 -->
+    <style name="divider_horizontal_white">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_width</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="Layouts" />
+    <!-- 一般水平布局元素父风格 -->
+    <style name="Layouts.base_normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_normal</item>
+        <item name="android:background">@drawable/bg_pressed_default</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <!-- 一般水平线性布局元素风格 -->
+    <style name="Layouts.normal_LinearLayout" parent="Layouts.base_normal">
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <!-- 一般水平相对布局元素风格 -->
+    <style name="Layouts.normal_RelativeLayout" parent="Layouts.base_normal">
+
+    </style>
+    <!-- 一般适配器水平布局元素风格 -->
+    <style name="normal_layout_adapter_item" parent="Layouts.base_normal">
+        <item name="android:clickable">false</item>
+    </style>
+
+</resources>

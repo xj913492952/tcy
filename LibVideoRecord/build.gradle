@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion ANDROID_COMPILE_SDK_VERSION
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion ANDROID_MIN_SDK_VERSION
+        targetSdkVersion ANDROID_TARGET_SDK_VERSION
+    }
+
+    dependencies {
+        implementation 'com.android.support:support-v13:'+project.ANDROID_SUPPORT_VERSION
+        implementation 'com.android.support:support-v4:'+project.ANDROID_SUPPORT_VERSION
+        implementation 'com.android.support:appcompat-v7:'+project.ANDROID_SUPPORT_VERSION
+    }
+}

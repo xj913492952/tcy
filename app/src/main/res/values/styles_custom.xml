@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Layouts.user_info_item" parent="Layouts.normal_LinearLayout">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/height_normal</item>
+    </style>
+    <style name="text_user_info_title" parent="text_black_13sp">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_normal</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="user_info_icon">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:src">@mipmap/ic_launcher</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="user_info_content" parent="text_black_15sp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColorHint">@color/text_color_hint</item>
+    </style>
+    <style name="user_info_tag">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="lineMargin">10dp</item>
+        <item name="tagMargin">5dp</item>
+        <item name="textPaddingLeft">20dp</item>
+        <item name="textPaddingTop">6dp</item>
+        <item name="textPaddingRight">20dp</item>
+        <item name="textPaddingBottom">6dp</item>
+
+    </style>
+    <style name="normal_title_content" parent="text_black_15sp">
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColorHint">@color/text_color_hint</item>
+    </style>
+</resources>
