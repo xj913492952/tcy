@@ -152,31 +152,25 @@ public class ChatInputManager implements View.OnClickListener {
     public void onClick(View view) {
         String otherUserName = mChatActivity.getContactUserId();
         int id = view.getId();
-        switch (id) {
-            case R.id.view_picture:
-                selectPicFromLocal(); // 点击图片图标
-                hiddenSoftInput();
-                break;
-            case R.id.view_camera:
-                takeCamera();         // 点击照相图标
-                hiddenSoftInput();
-                break;
-            case R.id.view_location:
-                openMap();       //点击位置图标
-                hiddenSoftInput();
-                break;
-            case R.id.view_emotion:
-                closeRecordContainer();
-                openEmotionContainer();
-                mChatActivity.scrollToBottom(true);
-                break;
-            case R.id.view_audio_record:
-                closeEmotionContainer();
-                openRecordContainer();
-                mChatActivity.scrollToBottom(true);
+        if (id == R.id.view_picture) {
+            selectPicFromLocal(); // 点击图片图标
+            hiddenSoftInput();
+        } else if (id == R.id.view_camera) {
+            takeCamera();         // 点击照相图标
+            hiddenSoftInput();
+        } else if (id == R.id.view_location) {
+            openMap();       //点击位置图标
+            hiddenSoftInput();
+        } else if (id == R.id.view_emotion) {
+            closeRecordContainer();
+            openEmotionContainer();
+            mChatActivity.scrollToBottom(true);
+        } else if (id == R.id.view_audio_record) {
+            closeEmotionContainer();
+            openRecordContainer();
+            mChatActivity.scrollToBottom(true);
 
-                break;
-            /*case R.id.view_video_record:
+                /*case R.id.view_video_record:
                 //mChatActivity.showToast("正在努力开发中");
                 recordVideo();       //录制视频
                 break;
@@ -188,12 +182,10 @@ public class ChatInputManager implements View.OnClickListener {
             /*case R.id.view_more:
                 onClickMoreView(view);
                 break;*/
-            case R.id.btn_send:
-                // 点击发送按钮(发文字和表情)
-                sendText(otherUserName);
-                closeBottomContainer();
-                hiddenSoftInput();
-                break;
+        } else if (id == R.id.btn_send) {// 点击发送按钮(发文字和表情)
+            sendText(otherUserName);
+            closeBottomContainer();
+            hiddenSoftInput();
         }
     }
 

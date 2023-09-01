@@ -62,16 +62,13 @@ public class PersonInfoShowActivity extends BaseToolbarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.edit_photo_wall:
-                skip(PersonInfoEditPhotoWallActivity.class);
-                break;
-            case R.id.edit_basic_info:
-                skip(PersonInfoEditBasicActivity.class);
-                break;
-            case R.id.edit_extend_info:
-                skip(PersonInfoEditExtendActivity.class);
-                break;
+        int itemId = item.getItemId();
+        if (itemId == R.id.edit_photo_wall) {
+            skip(PersonInfoEditPhotoWallActivity.class);
+        } else if (itemId == R.id.edit_basic_info) {
+            skip(PersonInfoEditBasicActivity.class);
+        } else if (itemId == R.id.edit_extend_info) {
+            skip(PersonInfoEditExtendActivity.class);
         }
         return super.onOptionsItemSelected(item);
     }

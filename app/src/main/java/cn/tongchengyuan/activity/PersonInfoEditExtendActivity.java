@@ -63,10 +63,8 @@ public class PersonInfoEditExtendActivity extends BaseToolbarActivity implements
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_text_only:
-                saveInfo();
-                break;
+        if (item.getItemId() == R.id.item_text_only) {
+            saveInfo();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -176,21 +174,17 @@ public class PersonInfoEditExtendActivity extends BaseToolbarActivity implements
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.layout_my_label:
-                openMulti("标签", getResources().getStringArray(R.array.my_label), bd.extend.tagViewMyLabel, R.color.tag_my_label, R.color.tag_my_label_bg, bd.extend.tvMyLabel);
-                break;
-            case R.id.layout_interest_sport:
-                openMulti("运动", getResources().getStringArray(R.array.sport), bd.extend.tagViewInterestSport, R.color.tag_sport, R.color.tag_sport_bg, bd.extend.tvInterestSport);
-                break;
-            case R.id.layout_interest_music:
-                openMulti("音乐", getResources().getStringArray(R.array.music), bd.extend.tagViewInterestMusic, R.color.tag_music, R.color.tag_music_bg, bd.extend.tvInterestMusic);
-                break;
-            case R.id.layout_interest_food:
-                openMulti("美食", getResources().getStringArray(R.array.food), bd.extend.tagViewInterestFood, R.color.tag_food, R.color.tag_food_bg, bd.extend.tvInterestFood);
-                break;
-            case R.id.layout_interest_movie:
-                openMulti("电影", getResources().getStringArray(R.array.movie), bd.extend.tagViewInterestMovie, R.color.tag_movie, R.color.tag_movie_bg, bd.extend.tvInterestMovie);
+        int id = view.getId();
+        if (id == R.id.layout_my_label) {
+            openMulti("标签", getResources().getStringArray(R.array.my_label), bd.extend.tagViewMyLabel, R.color.tag_my_label, R.color.tag_my_label_bg, bd.extend.tvMyLabel);
+        } else if (id == R.id.layout_interest_sport) {
+            openMulti("运动", getResources().getStringArray(R.array.sport), bd.extend.tagViewInterestSport, R.color.tag_sport, R.color.tag_sport_bg, bd.extend.tvInterestSport);
+        } else if (id == R.id.layout_interest_music) {
+            openMulti("音乐", getResources().getStringArray(R.array.music), bd.extend.tagViewInterestMusic, R.color.tag_music, R.color.tag_music_bg, bd.extend.tvInterestMusic);
+        } else if (id == R.id.layout_interest_food) {
+            openMulti("美食", getResources().getStringArray(R.array.food), bd.extend.tagViewInterestFood, R.color.tag_food, R.color.tag_food_bg, bd.extend.tvInterestFood);
+        } else if (id == R.id.layout_interest_movie) {
+            openMulti("电影", getResources().getStringArray(R.array.movie), bd.extend.tagViewInterestMovie, R.color.tag_movie, R.color.tag_movie_bg, bd.extend.tvInterestMovie);
         }
     }
 

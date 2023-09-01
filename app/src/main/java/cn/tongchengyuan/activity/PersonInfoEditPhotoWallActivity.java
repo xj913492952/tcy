@@ -48,10 +48,7 @@ public class PersonInfoEditPhotoWallActivity extends BaseToolbarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_text_only:
-                //saveInfo();
-                break;
+        if (item.getItemId() == R.id.item_text_only) {//saveInfo();
         }
         return super.onOptionsItemSelected(item);
     }

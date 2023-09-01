@@ -44,12 +44,10 @@ public class QRScanActivity extends BaseToolbarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.select:
-                if (CommonUtil.isSDcardAvailable()) {
-                    CommonUtil.selectPhoto(this);
-                }
-                break;
+        if (item.getItemId() == R.id.select) {
+            if (CommonUtil.isSDcardAvailable()) {
+                CommonUtil.selectPhoto(this);
+            }
         }
         return super.onOptionsItemSelected(item);
     }

@@ -2,6 +2,7 @@ package cn.tongchengyuan.fragment;
 
 
 import android.databinding.DataBindingUtil;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,22 +40,19 @@ public class Fragment_Discover extends BaseFragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        switch (view.getId()) {
-            case R.id.layout_discovery_dynamic:
-                skip(FriendCircleActivity.class);
-                break;
-            case R.id.layout_left_menu_6:
-                skip(QRScanActivity.class);
-                break;
-            case R.id.layout_left_menu_7:
-                skip(ScanCardActivity.class);
-                break;
-            case R.id.layout_left_menu_8:
-                skip(Camera2ScanActivity.class);
-                break;
-            case R.id.layout_left_menu_9:
+        int id = view.getId();
+        if (id == R.id.layout_discovery_dynamic) {
+            skip(FriendCircleActivity.class);
+        } else if (id == R.id.layout_left_menu_6) {
+            skip(QRScanActivity.class);
+        } else if (id == R.id.layout_left_menu_7) {
+            skip(ScanCardActivity.class);
+        } else if (id == R.id.layout_left_menu_8) {
+            skip(Camera2ScanActivity.class);
+        } else if (id == R.id.layout_left_menu_9) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 skip(FingerPrintActivity.class);
-                break;
+            }
         }
     }
 

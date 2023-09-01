@@ -292,8 +292,8 @@ public class VoiceCallActivity extends CallActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.btn_refuse_call: // 拒绝接听
+		int id = v.getId();
+		if (id == R.id.btn_refuse_call) { // 拒绝接听
 			if (ringtone != null)
 				ringtone.stop();
 			try {
@@ -304,9 +304,7 @@ public class VoiceCallActivity extends CallActivity implements OnClickListener {
 				finish();
 			}
 			callingState = CallingState.REFUESD;
-			break;
-
-		case R.id.btn_answer_call: // 接听电话
+		} else if (id == R.id.btn_answer_call) { // 接听电话
 			comingBtnContainer.setVisibility(View.INVISIBLE);
 			hangupBtn.setVisibility(View.VISIBLE);
 			voiceContronlLayout.setVisibility(View.VISIBLE);
@@ -324,9 +322,7 @@ public class VoiceCallActivity extends CallActivity implements OnClickListener {
 					finish();
 				}
 			}
-			break;
-
-		case R.id.btn_hangup_call: // 挂断电话
+		} else if (id == R.id.btn_hangup_call) { // 挂断电话
 			if (soundPool != null)
 				soundPool.stop(streamID);
 			endCallTriggerByMe = true;
@@ -337,9 +333,7 @@ public class VoiceCallActivity extends CallActivity implements OnClickListener {
 				saveCallRecord(0);
 				finish();
 			}
-			break;
-
-		case R.id.iv_mute: // 静音开关
+		} else if (id == R.id.iv_mute) { // 静音开关
 			if (isMuteState) {
 				// 关闭静音
 				muteImage.setImageResource(R.drawable.icon_mute_normal);
@@ -351,8 +345,7 @@ public class VoiceCallActivity extends CallActivity implements OnClickListener {
 				audioManager.setMicrophoneMute(true);
 				isMuteState = true;
 			}
-			break;
-		case R.id.iv_handsfree: // 免提开关
+		} else if (id == R.id.iv_handsfree) { // 免提开关
 			if (isHandsfreeState) {
 				// 关闭免提
 				handsFreeImage.setImageResource(R.drawable.icon_speaker_normal);
@@ -363,9 +356,6 @@ public class VoiceCallActivity extends CallActivity implements OnClickListener {
 				openSpeakerOn();
 				isHandsfreeState = true;
 			}
-			break;
-		default:
-			break;
 		}
 	}
 

@@ -78,10 +78,8 @@ public class FriendCircleActivity extends BaseToolbarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.select:
-                skipForResult(DynamicPublishActivity.class, Skip.CODE_PUBLISH_DYNAMIC);
-                break;
+        if (item.getItemId() == R.id.select) {
+            skipForResult(DynamicPublishActivity.class, Skip.CODE_PUBLISH_DYNAMIC);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -114,7 +112,7 @@ public class FriendCircleActivity extends BaseToolbarActivity {
         //禁用自动加载更多功能
         bd.recyclerView.setLoadMoreEnabled(true);
         bd.recyclerView.setRefreshProgressStyle(ProgressStyle.BallPulse);
-        bd.recyclerView.setArrowImageView(R.drawable.ic_pulltorefresh_arrow);
+        bd.recyclerView.setArrowImageView(com.github.jdsjlzx.R.drawable.ic_pulltorefresh_arrow);
         bd.recyclerView.setLoadingMoreProgressStyle(ProgressStyle.BallPulse);
         //设置头部加载颜色
         bd.recyclerView.setHeaderViewColor(R.color.white, android.R.color.white, R.color.bg_refresh_view);

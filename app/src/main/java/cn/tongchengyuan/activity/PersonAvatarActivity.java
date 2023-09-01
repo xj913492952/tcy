@@ -69,10 +69,8 @@ public class PersonAvatarActivity extends BaseToolbarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.select:
-                showSelPicPopupWindow();
-                break;
+        if (item.getItemId() == R.id.select) {
+            showSelPicPopupWindow();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -245,15 +245,10 @@ public class BaiduMapActivity extends BaseActivity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.img_back:
-                finish();
-                break;
-            case R.id.txt_right:
-
-                break;
-            default:
-                break;
+        int id = v.getId();
+        if (id == R.id.img_back) {
+            finish();
+        } else if (id == R.id.txt_right) {
         }
     }
 

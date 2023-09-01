@@ -125,16 +125,13 @@ public class MainActivity extends BaseActivity {
     }
 
     public void onTabClicked(View view) {
-        switch (view.getId()) {
-            case R.id.re_weixin:
-                index = 0;
-                break;
-            case R.id.re_contact_list:
-                index = 1;
-                break;
-            case R.id.re_find:
-                index = 2;
-                break;
+        int id = view.getId();
+        if (id == R.id.re_weixin) {
+            index = 0;
+        } else if (id == R.id.re_contact_list) {
+            index = 1;
+        } else if (id == R.id.re_find) {
+            index = 2;
         }
         setSelectedIndex(index);
         bd.main.body.viewpager.setCurrentItem(index, false);

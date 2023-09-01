@@ -65,20 +65,14 @@ public class CustomNotifyView extends View {
         int n = a.getIndexCount();
         for (int i = 0; i < n; i++) {
             int attr = a.getIndex(i);
-            switch (attr) {
-                case R.styleable.CustomNotifyView_notifyBackgroundColor:
-                    mBackgroundColor = a.getColor(attr, mBackgroundColor);
-                    break;
-                case R.styleable.CustomNotifyView_notifyText:
-                    mTitleText = a.getString(attr);
-                    break;
-                case R.styleable.CustomNotifyView_notifyTextColor:
-                    mTitleTextColor = a.getColor(attr, mTitleTextColor);
-                    break;
-                case R.styleable.CustomNotifyView_notifyTextSize:
-                    mTitleTextSize = a.getDimensionPixelSize(attr, mTitleTextSize);
-                    break;
-
+            if (attr == R.styleable.CustomNotifyView_notifyBackgroundColor) {
+                mBackgroundColor = a.getColor(attr, mBackgroundColor);
+            } else if (attr == R.styleable.CustomNotifyView_notifyText) {
+                mTitleText = a.getString(attr);
+            } else if (attr == R.styleable.CustomNotifyView_notifyTextColor) {
+                mTitleTextColor = a.getColor(attr, mTitleTextColor);
+            } else if (attr == R.styleable.CustomNotifyView_notifyTextSize) {
+                mTitleTextSize = a.getDimensionPixelSize(attr, mTitleTextSize);
             }
 
         }

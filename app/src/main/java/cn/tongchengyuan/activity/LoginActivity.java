@@ -49,18 +49,13 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tv_wenti:
-                break;
-            case R.id.btn_register:
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-                overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
-                break;
-            case R.id.btn_login:
-                startLogin();
-                break;
-            default:
-                break;
+        int id = v.getId();
+        if (id == R.id.tv_wenti) {
+        } else if (id == R.id.btn_register) {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
+        } else if (id == R.id.btn_login) {
+            startLogin();
         }
     }
 

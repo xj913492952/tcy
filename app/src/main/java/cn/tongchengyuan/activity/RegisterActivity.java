@@ -97,23 +97,16 @@ public class RegisterActivity extends BaseToolbarActivity implements OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.img_back:
-                //CommonUtil.finish(RegisterActivity.this);
-                break;
-            case R.id.btn_send:
-                if (mc == null) {
-                    mc = new MyCount(60000, 1000); // 第一参数是总的时间，第二个是间隔时间
-                }
-                mc.start();
-                sendVerifyCode();
-                break;
-
-            case R.id.btnRegister:
-                checkInput();
-                break;
-            default:
-                break;
+        int id = v.getId();
+        if (id == R.id.img_back) {//CommonUtil.finish(RegisterActivity.this);
+        } else if (id == R.id.btn_send) {
+            if (mc == null) {
+                mc = new MyCount(60000, 1000); // 第一参数是总的时间，第二个是间隔时间
+            }
+            mc.start();
+            sendVerifyCode();
+        } else if (id == R.id.btnRegister) {
+            checkInput();
         }
     }
 

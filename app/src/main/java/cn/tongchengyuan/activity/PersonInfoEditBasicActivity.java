@@ -59,10 +59,8 @@ public class PersonInfoEditBasicActivity extends BaseToolbarActivity implements 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_text_only:
-                saveInfo();
-                break;
+        if (item.getItemId() == R.id.item_text_only) {
+            saveInfo();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -188,37 +186,27 @@ public class PersonInfoEditBasicActivity extends BaseToolbarActivity implements 
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.layout_sex:
-                openSelectSex(sexList, bd.tvSex);
-                break;
-            case R.id.layout_name:
-                openEdit(bd.tvName);
-                break;
-            case R.id.layout_birthday:
-                openSelectBirthday();
-                break;
-            case R.id.layout_emotion:
-                openSingleSelect(getResources().getStringArray(R.array.emotion), bd.basicInfo.tvEmotion);
-                break;
-            case R.id.layout_education:
-                openSingleSelect(getResources().getStringArray(R.array.education), bd.basicInfo.tvEducation);
-                break;
-            case R.id.layout_industry:
-                openSingleSelect(getResources().getStringArray(R.array.industry), bd.basicInfo.tvIndustry);
-                break;
-            case R.id.layout_work_area:
-                openSingleSelect(getResources().getStringArray(R.array.occupations), bd.basicInfo.tvWorkArea);
-                break;
-            case R.id.layout_company_info:
-                openEdit(bd.basicInfo.tvCompanyInfo);
-                break;
-            case R.id.layout_hometown_info:
-                openEdit(bd.basicInfo.tvHometownInfo);
-                break;
-            case R.id.layout_my_heart:
-                openEdit(bd.basicInfo.tvMyHeart);
-                break;
+        int id = view.getId();
+        if (id == R.id.layout_sex) {
+            openSelectSex(sexList, bd.tvSex);
+        } else if (id == R.id.layout_name) {
+            openEdit(bd.tvName);
+        } else if (id == R.id.layout_birthday) {
+            openSelectBirthday();
+        } else if (id == R.id.layout_emotion) {
+            openSingleSelect(getResources().getStringArray(R.array.emotion), bd.basicInfo.tvEmotion);
+        } else if (id == R.id.layout_education) {
+            openSingleSelect(getResources().getStringArray(R.array.education), bd.basicInfo.tvEducation);
+        } else if (id == R.id.layout_industry) {
+            openSingleSelect(getResources().getStringArray(R.array.industry), bd.basicInfo.tvIndustry);
+        } else if (id == R.id.layout_work_area) {
+            openSingleSelect(getResources().getStringArray(R.array.occupations), bd.basicInfo.tvWorkArea);
+        } else if (id == R.id.layout_company_info) {
+            openEdit(bd.basicInfo.tvCompanyInfo);
+        } else if (id == R.id.layout_hometown_info) {
+            openEdit(bd.basicInfo.tvHometownInfo);
+        } else if (id == R.id.layout_my_heart) {
+            openEdit(bd.basicInfo.tvMyHeart);
         }
     }
 

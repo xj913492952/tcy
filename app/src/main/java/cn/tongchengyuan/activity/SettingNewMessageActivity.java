@@ -34,17 +34,10 @@ public class SettingNewMessageActivity extends BaseToolbarActivity implements Co
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-        switch (buttonView.getId()) {
-            case R.id.switch_show_message:
-
-                break;
-            case R.id.switch_ringtone:
-
-                break;
-            case R.id.switch_vibrate:
-
-                break;
-
+        int id = buttonView.getId();
+        if (id == R.id.switch_show_message) {
+        } else if (id == R.id.switch_ringtone) {
+        } else if (id == R.id.switch_vibrate) {
         }
     }
 }

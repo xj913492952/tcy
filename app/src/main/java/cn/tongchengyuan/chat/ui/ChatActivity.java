@@ -91,10 +91,7 @@ public class ChatActivity extends BaseToolbarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.avatar_select:
-                //goonNext();
-                break;
+        if (item.getItemId() == R.id.avatar_select) {//goonNext();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -130,7 +127,7 @@ public class ChatActivity extends BaseToolbarActivity {
         bd.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         bd.recyclerView.setLoadMoreEnabled(false);
         bd.recyclerView.setRefreshProgressStyle(ProgressStyle.BallPulse);
-        bd.recyclerView.setArrowImageView(R.drawable.ic_pulltorefresh_arrow);
+        bd.recyclerView.setArrowImageView(com.github.jdsjlzx.R.drawable.ic_pulltorefresh_arrow);
         //mRecyclerView.setLoadingMoreProgressStyle(ProgressStyle.BallPulse);
         //设置头部加载颜色
         bd.recyclerView.setHeaderViewColor(R.color.white, android.R.color.white, R.color.bg_refresh_view);

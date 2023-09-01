@@ -52,10 +52,7 @@ public class UserInfoActivity extends BaseToolbarActivity implements OnClickList
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item_text_only:
-                //goonNext();
-                break;
+        if (item.getItemId() == R.id.item_text_only) {//goonNext();
         }
         return super.onOptionsItemSelected(item);
     }

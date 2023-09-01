@@ -42,10 +42,7 @@ public class MyQRCodeActivity extends BaseToolbarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.select:
-                //skip(DynamicPublishActivity.class);
-                break;
+        if (item.getItemId() == R.id.select) {//skip(DynamicPublishActivity.class);
         }
         return super.onOptionsItemSelected(item);
     }
